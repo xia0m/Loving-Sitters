@@ -41,8 +41,8 @@ export default function Order(): JSX.Element {
   });
 
   useEffect(() => {
-    if (bookingDetails && bookingDetails.sitter) {
-      setUserProfile(bookingDetails.sitter);
+    if (bookingDetails && bookingDetails.receivedBy) {
+      setUserProfile(bookingDetails.receivedBy);
       setRequestId(bookingDetails._id);
       setStartDate(new Date(bookingDetails.start));
       setEndDate(new Date(bookingDetails.end));

@@ -103,7 +103,7 @@ export default function Payment({ userProfile, hours, requestId, start, end }: P
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         payment_method_id: paymentMethod.id,
-        sitter: userProfile._id,
+        receivedBy: userProfile._id,
         hours,
         start,
         end,

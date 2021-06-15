@@ -38,7 +38,7 @@ exports.getBookings = asyncHandler(async (req,res,next)=>{
       .sort({start:'desc'})
       .populate({
         path:'receivedBy',
-        select:'firstName lastName profilePhoto _id'
+        select:'firstName lastName profilePhoto _id price'
       });
     res.status(200).json({requests});
   } catch(error){
@@ -112,11 +112,11 @@ exports.updateRequestAccepted = asyncHandler(async (req, res, next) => {
 // @desc Pay and confirm accepted request
 // @access Private
 exports.payRequest = asyncHandler(async (req, res, next) => {
-  const { sitter, start, end, hours, payment_method_id, payment_intent_id } = req.body;
+  const { receivedBy, start, end, hours, payment_method_id, payment_intent_id } = req.body;
   const requestId = req.params.id;
   let intent;
 
-  if (!sitter) {
+  if (!receivedBy) {
     res.status(400);
     throw new Error('No sitter provided');
   }
@@ -129,7 +129,7 @@ exports.payRequest = asyncHandler(async (req, res, next) => {
 
   if (payment_method_id) {
     //getting sitter profile for pricing
-    const sitterProfile = await Profile.findById(sitter);
+    const sitterProfile = await Profile.findById(receivedBy);
     if (!sitterProfile) {
       res.status(400);
       throw new Error('No sitter found');

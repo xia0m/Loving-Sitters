@@ -7,7 +7,6 @@ import { Button, Paper, Typography } from '@material-ui/core';
 import AvatarDisplay from '../../../components/AvatarDisplay/AvatarDisplay';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { Link } from 'react-router-dom';
-import React from 'react';
 
 interface Props {
   bookingDetails: Request | undefined;
