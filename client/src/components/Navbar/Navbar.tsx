@@ -167,7 +167,6 @@ export default function Navbar({ user, userProfile, logout }: Props): JSX.Elemen
           <BecomeSitterModal profile={profile} />
         </>
       )}
-      <NotificationComponent />
       {profile?.isDogSitter ? (
         <Button
           component={Link}
@@ -179,17 +178,16 @@ export default function Navbar({ user, userProfile, logout }: Props): JSX.Elemen
           Request
         </Button>
       ) : null}
-      {!profile?.isDogSitter ? (
-        <Button
-          component={Link}
-          to="/bookings"
-          id="product_tour_sitter_button'"
-          variant="text"
-          className={classes.userNavItem}
-        >
-          My Bookings
-        </Button>
-      ) : null}
+      <NotificationComponent />
+      <Button
+        component={Link}
+        to="/bookings"
+        id="product_tour_sitter_button'"
+        variant="text"
+        className={classes.userNavItem}
+      >
+        My Bookings
+      </Button>
 
       <Button
         id="product_tour_message_button"

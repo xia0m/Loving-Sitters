@@ -96,16 +96,11 @@ exports.updateRequestAccepted = asyncHandler(async (req, res, next) => {
   const { accepted, declined } = req.body;
   try {
     const request = await Request.findById(id);
-    const user = await User.findById(req.user.id).populate('profile');
-    // only sitter can accept or decline
-    if (request.receivedBy.toString() === user.profile._id.toString()) {
-      request.accepted = accepted;
-      request.declined = declined;
-    }
+    request.accepted = accepted;
+    request.declined = declined;
+    console.log('request is ', request);
     await request.save();
-    const otherUser = await User.findById(request.user).populate('profile');
-    request.sitter = otherUser.profile;
-
+    
     res.status(200).json({ request });
   } catch (error) {
     res.status(500);
