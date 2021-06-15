@@ -95,7 +95,7 @@ exports.updateRequestAccepted = asyncHandler(async (req, res, next) => {
   const id = req.params.id;
   const { accepted, declined } = req.body;
   try {
-    const request = await Request.findById(id);
+    const request = await Request.findById(id).populate('createdBy');
     request.accepted = accepted;
     request.declined = declined;
     console.log('request is ', request);
