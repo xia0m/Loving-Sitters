@@ -15,10 +15,11 @@ import { createNotificationData } from '../../../interface/Notification';
 import { useSocket } from '../../../context/useSocketContext';
 
 export interface Props {
-  sitter: Profile;
+  createdBy: Profile;
+  receivedBy: Profile;
 }
 
-export default function RequestForm({ sitter }: Props): JSX.Element {
+export default function RequestForm({ createdBy, receivedBy }: Props): JSX.Element {
   const { calculateAvgRating } = useAuth();
   const { loggedInUser, createNotification } = useAuth();
   const today = new Date();
@@ -38,8 +39,8 @@ export default function RequestForm({ sitter }: Props): JSX.Element {
 
   const handleSubmit = async () => {
     setLoading(true);
-    if (sitter) {
-      postRequest(sitter._id, startDate, endDate).then(() => {
+    if (receivedBy) {
+      postRequest(createdBy._id, receivedBy._id, startDate, endDate).then(() => {
         setSuccess(true);
       });
       if (loggedInUserDetails === null) {
@@ -49,18 +50,18 @@ export default function RequestForm({ sitter }: Props): JSX.Element {
       const newSitterNotification: createNotificationData = {
         types: 'request',
         description: `You received a new sitting request from ${loggedInUserDetails?.firstName} ${loggedInUserDetails?.lastName}`,
-        targetProfileId: sitter._id,
+        targetProfileId: receivedBy._id,
       };
       createNotification(newSitterNotification);
       //send notification to sitter
-      socket?.emit('send-notification', { ...newSitterNotification, recipient: sitter._id });
+      socket?.emit('send-notification', { ...newSitterNotification, recipient: receivedBy._id });
     }
     setLoading(false);
   };
 
   const sendMessage = () => {
-    if (loggedInUserDetails && sitter)
-      createConversation(loggedInUserDetails?._id, sitter?._id).then((res) => {
+    if (loggedInUserDetails && receivedBy)
+      createConversation(loggedInUserDetails?._id, receivedBy?._id).then((res) => {
         if (res.success) {
           addConversation(res.success.conversation);
           history.push(`/messages/${res.success.conversation.conversationId}`);
@@ -73,9 +74,14 @@ export default function RequestForm({ sitter }: Props): JSX.Element {
       <Paper elevation={6} className={classes.requestContainer}>
         <Box textAlign="center">
           <Typography align="center" variant="body1" className={classes.price}>
-            ${sitter.price}/hr
+            ${receivedBy.price}/hr
           </Typography>
-          <Rating value={calculateAvgRating(sitter.reviews)} precision={0.1} name="profile-details-rating" readOnly />
+          <Rating
+            value={calculateAvgRating(receivedBy.reviews)}
+            precision={0.1}
+            name="profile-details-rating"
+            readOnly
+          />
         </Box>
         <Box className={classes.dateContainer}>
           <Typography variant="body1" className={classes.title}>

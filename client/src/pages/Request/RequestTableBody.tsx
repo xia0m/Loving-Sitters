@@ -61,7 +61,7 @@ export default function RequestTableBody(): JSX.Element {
         ? requests.map((request) => (
             <TableRow key={request._id}>
               <TableCell align="center">
-                <OwnerInfo profile={request.sitter} />
+                <OwnerInfo profile={request.createdBy} />
               </TableCell>
               <TableCell align="center">{checkLabel(request.accepted, request.declined)}</TableCell>
               <TableCell align="center">{moment(request.start).format('MMMM Do YYYY, h:mm a')}</TableCell>

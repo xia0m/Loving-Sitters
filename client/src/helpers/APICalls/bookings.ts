@@ -4,7 +4,6 @@ import { FetchOptions } from '../../interface/FetchOptions';
 export const getRequests = async (): Promise<RequestAPIData> => {
   const fetchOptions: FetchOptions = {
     method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
   };
   return await fetch(`/requests`, fetchOptions)
@@ -14,13 +13,31 @@ export const getRequests = async (): Promise<RequestAPIData> => {
     }));
 };
 
-export const postRequest = async (sitter: string, start: Date, end: Date): Promise<RequestAPIData> => {
+export const getBookings = async (): Promise<RequestAPIData> => {
+  const fetchOptions: FetchOptions = {
+    method: 'GET',
+    credentials: 'include',
+  };
+  return await fetch(`/requests/bookings`, fetchOptions)
+    .then((res) => res.json())
+    .catch(() => ({
+      error: { message: 'Unable to connect to server. Please try again' },
+    }));
+};
+
+export const postRequest = async (
+  createdBy: string,
+  receivedBy: string,
+  start: Date,
+  end: Date,
+): Promise<RequestAPIData> => {
   const fetchOptions: FetchOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'include',
     body: JSON.stringify({
-      sitter,
+      createdBy,
+      receivedBy,
       start,
       end,
     }),

@@ -6,6 +6,8 @@ export interface Request {
   user?: User;
   sitter?: Profile;
   otherUser?: Profile;
+  createdBy?: Profile;
+  receivedBy?: Profile;
   start: Date;
   end: Date;
   accepted: boolean;

@@ -16,13 +16,13 @@ exports.getRequests = asyncHandler(async (req, res, next) => {
   try{
     const currentUser = await User.findById(req.user.id);
     const currentProfile = currentUser.profile
-    const result = await Request.find({receivedBy:currentProfile})
+    const requests = await Request.find({receivedBy:currentProfile})
       .sort({start:'desc'})
       .populate({
         path:'createdBy',
         select:'firstName lastName profilePhoto _id'
       });
-    res.status(200).json({result});
+    res.status(200).json({requests});
   } catch(error){
     res.status(500);
     throw new Error(error.message);
@@ -34,13 +34,13 @@ exports.getBookings = asyncHandler(async (req,res,next)=>{
   try{
     const currentUser = await User.findById(req.user.id);
     const currentProfile = currentUser.profile
-    const result = await Request.find({createdBy:currentProfile})
+    const requests = await Request.find({createdBy:currentProfile})
       .sort({start:'desc'})
       .populate({
         path:'receivedBy',
         select:'firstName lastName profilePhoto _id'
       });
-    res.status(200).json({result});
+    res.status(200).json({requests});
   } catch(error){
     res.status(500);
     throw new Error(error.message);

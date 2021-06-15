@@ -17,7 +17,7 @@ export default function Bookings({ bookingDetails }: Props): JSX.Element {
   const classes = useStyles();
 
   if (!bookingDetails) return <></>;
-  const { start, accepted, declined, sitter, paid } = bookingDetails;
+  const { start, accepted, declined, receivedBy, paid } = bookingDetails;
 
   return (
     <>
@@ -38,9 +38,9 @@ export default function Bookings({ bookingDetails }: Props): JSX.Element {
           className={classes.bookingDetails}
         >
           <Grid container alignItems="center" className={classes.sitterDetailsContainer}>
-            <AvatarDisplay src={sitter?.profilePhoto} />
+            <AvatarDisplay src={receivedBy?.profilePhoto} />
             <Typography component="span" className={classes.sitterName}>
-              {`${sitter?.firstName} ${sitter?.lastName}`}
+              {`${receivedBy?.firstName} ${receivedBy?.lastName}`}
             </Typography>
           </Grid>
           {!paid ? (

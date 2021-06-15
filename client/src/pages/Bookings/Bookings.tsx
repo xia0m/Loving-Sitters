@@ -6,7 +6,7 @@ import Booking from './Booking/Booking';
 import { CircularProgress, Paper, Typography } from '@material-ui/core';
 import { Request } from '../../interface/Bookings';
 import BookingCalendar from './Calendar/Calendar';
-import { getRequests } from '../../helpers/APICalls/bookings';
+import { getBookings } from '../../helpers/APICalls/bookings';
 import moment from 'moment';
 
 export default function Bookings(): JSX.Element {
@@ -22,7 +22,7 @@ export default function Bookings(): JSX.Element {
 
   useEffect(() => {
     setLoading(true);
-    getRequests().then((data) => {
+    getBookings().then((data) => {
       if (data.requests) {
         setBookings(data?.requests);
       }

@@ -9,7 +9,7 @@ import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 export default function ProfileDetails(): JSX.Element {
   const { id } = useParams<{ id?: string }>();
-  const { sitterProfiles, loading } = useAuth();
+  const { sitterProfiles, loading, loggedInUserDetails } = useAuth();
   const sitterProfile = sitterProfiles.filter((sitter) => sitter._id === id)[0];
   const classes = useStyles();
 
@@ -23,7 +23,9 @@ export default function ProfileDetails(): JSX.Element {
           {sitterProfile && <About sitter={sitterProfile} />}
         </Box>
         <Box flex={1} className={classes.formContainer}>
-          {sitterProfile && <RequestForm sitter={sitterProfile} />}
+          {sitterProfile && loggedInUserDetails && (
+            <RequestForm receivedBy={sitterProfile} createdBy={loggedInUserDetails} />
+          )}
         </Box>
       </Box>
     </Box>
