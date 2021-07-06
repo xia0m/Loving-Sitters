@@ -22,34 +22,30 @@ exports.getNotifications = asyncHandler(async (req, res, next) => {
 // @route POST /notification
 // @access Private
 exports.postNotification = asyncHandler(async (req, res, next) => {
-  const { types,description, targetProfileId, targetUserId } = req.body;
-  const id = targetUserId ;
+  
+  const {types, description, profileId} = req.body;
   const newNotification = new Notification({
     types,
-    description,
+    description
   });
-
   try {
-    const currentUser = await User.findById(id);
-    const currentProfile = targetProfileId==='' ? 
-      await Profile.findById(currentUser.profile):
-      await Profile.findById(targetProfileId);
-    currentProfile.notifications.unshift(newNotification._id);
-    await currentProfile.save();
+    const profile = await Profile.findById(profileId);
+    profile.notifications.unshift(newNotification._id);
+    await profile.save();
     await newNotification.save();
-    const result = await Profile.findById(currentProfile._id)
-                    .populate('notifications');
+    const result = await Profile.findById(profileId).populate('notifications');
     const newNotifications = result.notifications.filter(
       notification=>(
         notification.read === false
         )
       )
     res.status(201).json({ notifications:newNotifications});
-  } catch (error) {
+  } catch(error) {
     res.status(500);
     res.send(error);
     throw new Error(error.message);
   }
+
   
 });
 
