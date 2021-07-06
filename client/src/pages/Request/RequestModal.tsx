@@ -50,16 +50,15 @@ export default function RequestModal({ request, updateRequest }: Props): JSX.Ele
       if (data.request) {
         updateRequest(data.request);
         console.log(data);
-        if (request && request.user) {
+        if (request && request.createdBy) {
           const receiverNotification: createNotificationData = {
             types: 'default',
-            description: `You request to ${loggedInUserDetails?.firstName} ${loggedInUserDetails?.lastName} has been declined!`,
-            targetProfileId: '',
-            targetUserId: data.request.user,
+            description: `Your request to ${loggedInUserDetails?.firstName} ${loggedInUserDetails?.lastName} has been declined!`,
+            profileId: request.createdBy._id,
           };
           createNotification(receiverNotification);
           //send notification to user
-          socket?.emit('send-notification', { ...receiverNotification, recipient: data?.request.sitter?._id });
+          socket?.emit('send-notification', { ...receiverNotification, recipient: data?.request.createdBy?._id });
         }
         handleClose();
       }
@@ -69,16 +68,15 @@ export default function RequestModal({ request, updateRequest }: Props): JSX.Ele
     acceptRequest(_id).then((data) => {
       if (data.request) {
         updateRequest(data.request);
-        if (request && request.user) {
+        if (request && request.createdBy) {
           const receiverNotification: createNotificationData = {
             types: 'default',
             description: `You request to ${loggedInUserDetails?.firstName} ${loggedInUserDetails?.lastName} has been accepted!`,
-            targetProfileId: '',
-            targetUserId: data.request.user,
+            profileId: request.createdBy._id,
           };
           createNotification(receiverNotification);
           //send notification to user
-          socket?.emit('send-notification', { ...receiverNotification, recipient: data?.request.sitter?._id });
+          socket?.emit('send-notification', { ...receiverNotification, recipient: data?.request.createdBy?._id });
         }
         handleClose();
       }

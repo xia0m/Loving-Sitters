@@ -41,7 +41,7 @@ interface IAuthContext {
   updateLoggedInUserDetails: (data: UserProfileApiData) => void;
   updateSitterProfilesContext: (data: SitterProfilesApiDataSuccess) => void;
   updateNotificationsContext: (data: Notification[]) => void;
-  createNotification: ({ types, description, targetProfileId, targetUserId }: createNotificationData) => void;
+  createNotification: ({ types, description, profileId }: createNotificationData) => void;
   updateReviewsContext: (data: ReviewsApiDataSuccess) => void;
   logout: () => void;
   setLoading: Dispatch<SetStateAction<boolean>>;
@@ -148,14 +148,9 @@ export const AuthProvider: FunctionComponent = ({ children }): JSX.Element => {
   );
 
   const createNotification = useCallback(
-    async ({ types, description, targetProfileId, targetUserId }: createNotificationData) => {
+    async ({ types, description, profileId }: createNotificationData) => {
       try {
-        if (targetProfileId === '' && !targetUserId) {
-          const res = await createNewNotification(types, description, targetProfileId, targetUserId);
-          res && res.notifications && updateNotificationsContext(res?.notifications);
-        } else {
-          await createNewNotification(types, description, targetProfileId, targetUserId);
-        }
+        await createNewNotification(types, description, profileId);
       } catch (error) {
         throw new Error(`error updating notifications, ${error}`);
       }

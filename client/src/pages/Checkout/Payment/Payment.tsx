@@ -142,7 +142,7 @@ export default function Payment({ userProfile, hours, requestId, start, end }: P
       const newNotificationData: createNotificationData = {
         types: 'system',
         description: `You have successfully received payment from ${loggedInUserDetails?.firstName} ${loggedInUserDetails?.lastName}`,
-        targetProfileId: userProfile._id,
+        profileId: userProfile._id,
       };
       createNotification(newNotificationData);
       //send notification to sitter

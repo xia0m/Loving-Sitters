@@ -30,13 +30,12 @@ export const setReadNotifications = async (): Promise<NotificationApiData> => {
 export const createNewNotification = async (
   types: string,
   description: string,
-  targetProfileId: string,
-  targetUserId?: User,
+  profileId: string,
 ): Promise<NotificationApiData> => {
   const fetchOptions: FetchOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ types, description, targetProfileId, targetUserId }),
+    body: JSON.stringify({ types, description, profileId }),
     credentials: 'include',
   };
   return await fetch(`/notification`, fetchOptions)

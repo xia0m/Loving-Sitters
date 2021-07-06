@@ -50,7 +50,7 @@ export default function RequestForm({ createdBy, receivedBy }: Props): JSX.Eleme
       const newSitterNotification: createNotificationData = {
         types: 'request',
         description: `You received a new sitting request from ${loggedInUserDetails?.firstName} ${loggedInUserDetails?.lastName}`,
-        targetProfileId: receivedBy._id,
+        profileId: receivedBy._id,
       };
       createNotification(newSitterNotification);
       //send notification to sitter
