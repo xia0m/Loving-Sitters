@@ -30,7 +30,7 @@ export default function RequestTableBody(): JSX.Element {
     async function fetchRequests() {
       try {
         const res = await getRequests();
-        res && res.requests ? setRequests(res?.requests) : null;
+        res && res.requests && setRequests(res?.requests);
       } catch (error) {
         console.log('error getting requests', error);
       }

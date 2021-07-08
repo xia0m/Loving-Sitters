@@ -85,7 +85,7 @@ export default function UploadPhoto(): JSX.Element {
   }, [url]);
 
   const handleDeletePhoto = async (type: string): Promise<void> => {
-    const confirmDelete = confirm(`Are you sure you want to delete ${type} photo?`);
+    const confirmDelete = window.confirm(`Are you sure you want to delete ${type} photo?`);
     if (!confirmDelete) return;
     try {
       if (type === 'profile') {

@@ -124,7 +124,7 @@ export default function Gallery({ gallery, user = false, profile }: Props): JSX.
   }, [urls]);
 
   const handleDeletePhoto = async (imageUrl: string): Promise<void> => {
-    const confirmDelete = confirm(`Are you sure you want to delete photo?`);
+    const confirmDelete = window.confirm(`Are you sure you want to delete photo?`);
     if (!confirmDelete) return;
     try {
       const id = profile ? profile._id : '';
