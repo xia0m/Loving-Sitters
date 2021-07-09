@@ -33,15 +33,15 @@ app.use(urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(join(__dirname, "public")));
 
-app.use("/auth", authRouter);
-app.use("/users", userRouter);
+app.use("/api/auth", authRouter);
+app.use("/api/users", userRouter);
 app.use("/profiles", profileRouter);
 app.use("/api", photoRouter);
-app.use("/reviews", reviewRouter);
-app.use("/requests", requestRouter);
-app.use("/notification", notificationRouter);
-app.use("/conversations", conversationRouter);
-app.use("/messages", messageRouter);
+app.use("/api/reviews", reviewRouter);
+app.use("/api/requests", requestRouter);
+app.use("/api/notification", notificationRouter);
+app.use("/api/conversations", conversationRouter);
+app.use("/api/messages", messageRouter);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, '../client/build')));
