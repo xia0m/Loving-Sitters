@@ -18,7 +18,7 @@ const AvatarDisplay = ({ profile, src, online, offline }: Props): JSX.Element =>
       classes={{ badge: `${classes.badge}  ${online && classes.online}  ${offline && classes.offline}` }}
       variant="dot"
       anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
-      overlap="circle"
+      overlap="circular"
     >
       <Avatar alt="Profile Image" src={profile?.profilePhoto || src} />
     </Badge>
