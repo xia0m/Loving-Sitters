@@ -1,5 +1,5 @@
-import { Fab } from '@material-ui/core';
-import { LiveHelp } from '@material-ui/icons';
+import { Fab } from '@mui/material';
+import { LiveHelp } from '@mui/icons-material';
 import useStyles from './useStyles';
 
 import { useReactour } from '../../context/useReactourContext';

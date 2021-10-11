@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Box, Button, CircularProgress, Fade, Grid, Paper, Typography } from '@material-ui/core';
+import { Box, Button, CircularProgress, Fade, Grid, Paper, Typography } from '@mui/material';
 import { KeyboardDatePicker, TimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
-import Rating from '@material-ui/lab/Rating';
+import Rating from '@mui/material/Rating';
 import DateFnsUtils from '@date-io/date-fns';
 
 import { Profile } from '../../../interface/Profile';

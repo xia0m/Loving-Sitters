@@ -1,4 +1,4 @@
-import { Paper, TableContainer, Table, Grid, Typography } from '@material-ui/core';
+import { Paper, TableContainer, Table, Grid, Typography } from '@mui/material';
 import useStyles from './useStyles';
 
 import RequestTableHead from './RequestTableHead';

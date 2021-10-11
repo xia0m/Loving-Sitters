@@ -1,11 +1,11 @@
-import Grid from '@material-ui/core/Grid';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@mui/material/Grid';
+import CssBaseline from '@mui/material/CssBaseline';
 import useStyles from './useStyles';
 import { Request } from '../../../interface/Bookings';
 import Moment from 'react-moment';
-import { Button, Paper, Typography } from '@material-ui/core';
+import { Button, Paper, Typography } from '@mui/material';
 import AvatarDisplay from '../../../components/AvatarDisplay/AvatarDisplay';
-import SettingsIcon from '@material-ui/icons/Settings';
+import SettingsIcon from '@mui/icons-material/Settings';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -22,7 +22,7 @@ export default function Bookings({ bookingDetails }: Props): JSX.Element {
     <>
       <CssBaseline />
       <Paper elevation={0} className={classes.root}>
-        <Grid container justify="space-between" className={classes.dateContainer}>
+        <Grid container justifyContent="space-between" className={classes.dateContainer}>
           <Typography component="span" className={classes.date}>
             <Moment date={start} interval={0} format="D MMM, YYYY" /> <Moment date={start} interval={0} format="LT" />
           </Typography>
@@ -32,7 +32,7 @@ export default function Bookings({ bookingDetails }: Props): JSX.Element {
           container
           direction="row"
           alignItems="center"
-          justify="space-between"
+          justifyContent="space-between"
           wrap="nowrap"
           className={classes.bookingDetails}
         >

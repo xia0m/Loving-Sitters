@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import useStyles from './useStyles';
 import { User } from '../../../interface/User';
 import AvatarDisplay from '../../../components/AvatarDisplay/AvatarDisplay';
@@ -30,7 +30,7 @@ const SideBar = ({ userProfile, conversations }: Props): JSX.Element => {
   return (
     <Grid className={classes.chatSideBanner}>
       <Grid item className={classes.userPanel}>
-        <Grid container alignItems="center" justify="space-between">
+        <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
             <AvatarDisplay loggedIn profile={userProfile} online />
             <Typography className={classes.userText} component="span" variant="h5">

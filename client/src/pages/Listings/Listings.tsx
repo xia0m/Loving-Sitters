@@ -1,4 +1,4 @@
-import { Box, CssBaseline, Typography } from '@material-ui/core';
+import { Box, CssBaseline, Typography } from '@mui/material';
 
 import useStyles from './useStyles';
 import ProfileSearch from '../../components/Listings/ProfileSearch/ProfileSearch';

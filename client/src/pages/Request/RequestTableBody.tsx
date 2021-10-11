@@ -1,4 +1,4 @@
-import { TableBody, TableRow, TableCell, Chip, Grid, Avatar, Typography } from '@material-ui/core';
+import { TableBody, TableRow, TableCell, Chip, Grid, Avatar, Typography } from '@mui/material';
 
 import RequestModal from './RequestModal';
 import { Request } from '../../interface/Bookings';

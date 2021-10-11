@@ -1,4 +1,4 @@
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 import useStyles from './useStyles';
 import { Conversation } from '../../../interface/Messages';
 import Header from './Header/Header';
@@ -6,7 +6,7 @@ import Messages from './Messages/Messages';
 import Input from './Input/Input';
 import { useAuth } from '../../../context/useAuthContext';
 import { useMessages } from '../../../context/useMessageContext';
-import { CircularProgress } from '@material-ui/core';
+import { CircularProgress } from '@mui/material';
 
 interface Props {
   conversation?: Conversation;
@@ -29,7 +29,7 @@ const ActiceChat = ({ conversation, handleSendMessage }: Props): JSX.Element => 
             userName={`${conversation.recipient.firstName} ${conversation.recipient.lastName}`}
             online={conversation.recipient.online}
           />
-          <Grid container direction="column" justify="space-between" className={classes.chatContainer}>
+          <Grid container direction="column" justifyContent="space-between" className={classes.chatContainer}>
             {loading ? (
               <CircularProgress />
             ) : (

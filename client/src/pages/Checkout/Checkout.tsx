@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import Grid from '@material-ui/core/Grid';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@mui/material/Grid';
+import CssBaseline from '@mui/material/CssBaseline';
 import useStyles from './useStyles';
-import { Paper } from '@material-ui/core';
+import { Paper } from '@mui/material';
 import OrderDetails from './OrderDetails/OrderDetails';
 import Payment from './Payment/Payment';
 import { Profile } from '../../interface/Profile';
@@ -68,7 +68,7 @@ export default function Order(): JSX.Element {
         component="main"
         className={`${classes.root}`}
         direction="row"
-        justify="center"
+        justifyContent="center"
         alignItems="center"
       >
         <Grid item md={8} sm={10} xs={12}>

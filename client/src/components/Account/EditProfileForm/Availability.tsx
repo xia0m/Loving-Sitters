@@ -1,6 +1,6 @@
 import useStyles from './useStyles';
-import Switch from '@material-ui/core/Switch';
-import { Checkbox, FormControlLabel, Grid, Typography } from '@material-ui/core';
+import Switch from '@mui/material/Switch';
+import { Checkbox, FormControlLabel, Grid, Typography } from '@mui/material';
 import { OwnerFormProfile } from '../../../interface/Profile';
 
 interface Props {

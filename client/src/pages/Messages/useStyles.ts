@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const drawerWidth = 240;
 
@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
       borderBottom: '1.2px solid rgba(0, 0, 0, 0.2)',
     },
     position: 'relative',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       overflowX: 'hidden',
     },
   },

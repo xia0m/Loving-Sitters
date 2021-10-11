@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Avatar, Box, Button, TextField, Typography } from '@material-ui/core';
-import Rating from '@material-ui/lab/Rating';
-import CreateIcon from '@material-ui/icons/Create';
-import CloseIcon from '@material-ui/icons/Close';
+import { Avatar, Box, Button, TextField, Typography } from '@mui/material';
+import Rating from '@mui/material/Rating';
+import CreateIcon from '@mui/icons-material/Create';
+import CloseIcon from '@mui/icons-material/Close';
 
 import useStyles from './useStyles';
 import { useAuth } from '../../../context/useAuthContext';

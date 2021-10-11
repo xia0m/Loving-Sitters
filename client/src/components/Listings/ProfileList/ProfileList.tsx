@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Box, Button, Grid, Grow, Typography } from '@material-ui/core';
-import Pagination from '@material-ui/lab/Pagination';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import { Box, Button, Grid, Grow, Typography } from '@mui/material';
+import Pagination from '@mui/material/Pagination';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 import useStyles from './useStyles';
 import { useAuth } from '../../../context/useAuthContext';
@@ -47,7 +47,7 @@ export default function ProfileList(): JSX.Element {
           id="product_tour_sitters"
           container
           spacing={4}
-          justify="center"
+          justifyContent="center"
           alignItems="center"
           className={classes.profilesGrid}
         >

@@ -1,4 +1,4 @@
-import { Box, Typography, Avatar } from '@material-ui/core';
+import { Box, Typography, Avatar } from '@mui/material';
 import useStyles from './useStyles';
 
 interface Props {

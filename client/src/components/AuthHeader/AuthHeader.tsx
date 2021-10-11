@@ -1,8 +1,8 @@
-import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import useStyles from './useStyles';
-import { Typography } from '@material-ui/core';
+import { Typography } from '@mui/material';
 
 interface Props {
   linkTo: string;

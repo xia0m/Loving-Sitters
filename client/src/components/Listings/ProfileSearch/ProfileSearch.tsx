@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useState, useEffect } from 'react';
-import { Box, TextField, InputAdornment, Button } from '@material-ui/core';
+import { Box, TextField, InputAdornment, Button } from '@mui/material';
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
-import SearchIcon from '@material-ui/icons/Search';
+import SearchIcon from '@mui/icons-material/Search';
 import DateFnsUtils from '@date-io/date-fns';
 
 import useStyles from './useStyles';

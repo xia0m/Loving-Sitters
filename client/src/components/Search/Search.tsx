@@ -1,8 +1,8 @@
 import { ChangeEvent, useState, useEffect, SyntheticEvent } from 'react';
 import useStyles from './useStyles';
-import SearchIcon from '@material-ui/icons/Search';
-import InputBase from '@material-ui/core/InputBase';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import SearchIcon from '@mui/icons-material/Search';
+import InputBase from '@mui/material/InputBase';
+import Autocomplete from '@mui/material/Autocomplete';
 import { User } from '../../interface/User';
 import { useDebounce } from 'use-debounce';
 import { searchUsers } from '../../helpers/APICalls/searchUsers';
@@ -62,7 +62,7 @@ const Search = ({ search, handleChange }: Props): JSX.Element => {
         onClose={() => {
           setOpen(false);
         }}
-        getOptionSelected={(option, value) => option.email === value.email}
+        isOptionEqualToValue={(option, value) => option.email === value.email}
         getOptionLabel={(option) => option.email}
         options={options}
         loading={loading}

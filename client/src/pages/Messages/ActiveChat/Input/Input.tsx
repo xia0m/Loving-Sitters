@@ -1,9 +1,9 @@
-import { TextField, Button, Grid } from '@material-ui/core';
+import { TextField, Button, Grid } from '@mui/material';
 import useStyles from './useStyles';
 import { ChangeEvent, FormEvent, MouseEvent, useState, useRef, useEffect } from 'react';
 import Picker, { IEmojiData } from 'emoji-picker-react';
-import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
-import SendIcon from '@material-ui/icons/Send';
+import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
+import SendIcon from '@mui/icons-material/Send';
 import { useSocket } from '../../../../context/useSocketContext';
 import { useMessages } from '../../../../context/useMessageContext';
 

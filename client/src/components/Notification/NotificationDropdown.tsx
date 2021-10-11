@@ -1,4 +1,4 @@
-import { Typography, Paper, Divider, Grid, Button } from '@material-ui/core';
+import { Typography, Paper, Divider, Grid, Button } from '@mui/material';
 import NotificationItem from './NotificationItem';
 import { setReadNotifications } from '../../helpers/APICalls/notifications';
 import { useAuth } from '../../context/useAuthContext';
@@ -25,7 +25,7 @@ export default function NotificationDropdown(): JSX.Element {
 
   return (
     <Paper className={classes.dropdown}>
-      <Grid container justify="space-between" alignItems="center">
+      <Grid container justifyContent="space-between" alignItems="center">
         <Typography variant="h5" className={classes.notificationTitle}>
           Notifications
         </Typography>

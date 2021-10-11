@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -12,14 +12,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down(1675)]: {
       padding: '4.25rem',
     },
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       flexDirection: 'column',
       padding: '4.25rem 6.75rem',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       padding: '4.25rem 3.5rem',
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       padding: '4.25rem 0.75rem',
     },
   },

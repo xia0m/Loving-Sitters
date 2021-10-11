@@ -1,6 +1,6 @@
-import { Avatar, Box, Card, CardActionArea, Divider, Typography } from '@material-ui/core';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import Rating from '@material-ui/lab/Rating';
+import { Avatar, Box, Card, CardActionArea, Divider, Typography } from '@mui/material';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Rating from '@mui/material/Rating';
 import { Link } from 'react-router-dom';
 
 import { useAuth } from '../../../context/useAuthContext';

@@ -1,10 +1,10 @@
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     minHeight: '100vh',
     background: '#fff',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       padding: '1rem',
     },
   },
@@ -23,13 +23,13 @@ const useStyles = makeStyles((theme) => ({
       boxShadow:
         'rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       maxWidth: 475,
       maxHeight: 550,
       marginTop: '3.5rem',
       padding: '1.5rem',
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       maxWidth: 415,
       padding: '0.85rem',
     },
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontWeight: 700,
     marginBottom: '3.5rem',
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('xl')]: {
       marginBottom: '2.5rem',
       fontSize: '3rem',
     },
@@ -49,10 +49,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down(1150)]: {
       padding: '0rem 1.5rem',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       padding: '0rem 1.15rem',
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       padding: '0rem 0.5rem',
     },
   },
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'left',
       marginTop: '3.25rem',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       marginTop: '2.5rem',
     },
   },
@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down(1150)]: {
       marginTop: '3.75rem',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       marginTop: '2.5rem',
     },
   },

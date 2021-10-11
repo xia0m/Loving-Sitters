@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
 const useStyles = makeStyles((theme) => ({
   reviewContainer: {
@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   },
   reviewHeader: {
     marginBottom: '0.75rem',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       marginBottom: '1.25rem',
     },
   },
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   desc: {
     margin: '1rem 0rem',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       margin: '0.75rem 0rem',
     },
   },

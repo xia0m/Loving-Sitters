@@ -1,4 +1,4 @@
-import { MuiThemeProvider } from '@material-ui/core';
+import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material';
 import { theme } from './themes/theme';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './pages/Login/Login';
@@ -23,6 +23,11 @@ import { Elements } from '@stripe/react-stripe-js';
 import Request from './pages/Request/Request';
 import { MessageContextProvider } from './context/useMessageContext';
 
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
 const stripePromise = loadStripe(
   'pk_test_51Ite41ETXh1tPNGoqqdONIoPnTfqTTKF7AXARKRrMqmqDzL6jP0dpaD2jQgCVf1NpnId9ZHTC5cTiQZiTlLSHUU100Md0Rj9EK',
 );
@@ -34,35 +39,37 @@ const CheckoutContainer = () => (
 
 function App(): JSX.Element {
   return (
-    <MuiThemeProvider theme={theme}>
-      <BrowserRouter>
-        <SnackBarProvider>
-          <AuthProvider>
-            <MessageContextProvider>
-              <SocketProvider>
-                <ReactourProvider>
-                  <Layout>
-                    <Switch>
-                      <Route exact path="/" component={LandingPage} />
-                      <Route exact path="/listings" component={Listings} />
-                      <Route exact path="/profile/:id" component={ProfileDetails} />
-                      <Route exact path="/login" component={Login} />
-                      <Route exact path="/signup" component={Signup} />
-                      <ProtectedRoute exact path="/checkout" component={CheckoutContainer} />
-                      <ProtectedRoute exact path="/bookings" component={Bookings} />
-                      <ProtectedRoute exact path="/messages" component={Messages} />
-                      <ProtectedRoute exact path="/messages/:conversationId" component={Messages} />
-                      <ProtectedRoute exact path="/user/:path" component={ProfileSettings} />
-                      <ProtectedRoute exact path="/requests" component={Request} />
-                    </Switch>
-                  </Layout>
-                </ReactourProvider>
-              </SocketProvider>
-            </MessageContextProvider>
-          </AuthProvider>
-        </SnackBarProvider>
-      </BrowserRouter>
-    </MuiThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <SnackBarProvider>
+            <AuthProvider>
+              <MessageContextProvider>
+                <SocketProvider>
+                  <ReactourProvider>
+                    <Layout>
+                      <Switch>
+                        <Route exact path="/" component={LandingPage} />
+                        <Route exact path="/listings" component={Listings} />
+                        <Route exact path="/profile/:id" component={ProfileDetails} />
+                        <Route exact path="/login" component={Login} />
+                        <Route exact path="/signup" component={Signup} />
+                        <ProtectedRoute exact path="/checkout" component={CheckoutContainer} />
+                        <ProtectedRoute exact path="/bookings" component={Bookings} />
+                        <ProtectedRoute exact path="/messages" component={Messages} />
+                        <ProtectedRoute exact path="/messages/:conversationId" component={Messages} />
+                        <ProtectedRoute exact path="/user/:path" component={ProfileSettings} />
+                        <ProtectedRoute exact path="/requests" component={Request} />
+                      </Switch>
+                    </Layout>
+                  </ReactourProvider>
+                </SocketProvider>
+              </MessageContextProvider>
+            </AuthProvider>
+          </SnackBarProvider>
+        </BrowserRouter>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 

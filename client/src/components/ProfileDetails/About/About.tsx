@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Avatar, Box, Fade, Grid, Paper, Typography } from '@material-ui/core';
+import { Avatar, Box, Fade, Grid, Paper, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import Pagination from '@material-ui/lab/Pagination';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Pagination from '@mui/material/Pagination';
 
 import { Profile } from '../../../interface/Profile';
 import Gallery from '../../Gallery/Gallery';
@@ -40,7 +40,7 @@ export default function About({ sitter }: Props): JSX.Element {
             <LocationOnIcon color="primary" />
             {sitter.city}
           </Typography>
-          <Grid container justify="center" alignItems="center">
+          <Grid container justifyContent="center" alignItems="center">
             <Typography className={classes.dayAvailable}>Availability:</Typography>
             {sitter.availability.length === 0 && <Typography className={classes.dayAvailable}>N/A</Typography>}
             {sitter.availability.map((day) => (

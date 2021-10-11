@@ -1,4 +1,4 @@
-import { Box, List } from '@material-ui/core';
+import { Box, List } from '@mui/material';
 import { useLocation } from 'react-router';
 
 import { useStyles } from './useStyles';

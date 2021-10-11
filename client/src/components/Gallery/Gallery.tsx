@@ -1,13 +1,13 @@
-import { Button, Grid, GridList, GridListTile, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import AddIcon from '@material-ui/icons/Add';
+import { Button, Grid, ImageList, ImageListItem, Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import AddIcon from '@mui/icons-material/Add';
 import { useState, useRef, useEffect } from 'react';
 import { useAuth } from '../../context/useAuthContext';
 import { useSnackBar } from '../../context/useSnackbarContext';
 import { deletePhotos, uploadPhoto } from '../../helpers/APICalls/updatePhotos';
 import updateProfile from '../../helpers/APICalls/updateProfile';
 import { OwnerFormProfile } from '../../interface/Profile';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
@@ -162,9 +162,9 @@ export default function Gallery({ gallery, user = false, profile }: Props): JSX.
           onChange={(e: React.ChangeEvent<HTMLInputElement>): void => handleImageChange(e)}
         />
       )}
-      <GridList cellHeight={160} cols={3} spacing={10}>
+      <ImageList cellHeight={160} cols={3} spacing={10}>
         {gallery.map((image, i) => (
-          <GridListTile cols={1} key={image}>
+          <ImageListItem cols={1} key={image}>
             {user && (
               <DeleteForeverIcon
                 className={`${classes.deleteIcon} deleteIcon`}
@@ -181,18 +181,18 @@ export default function Gallery({ gallery, user = false, profile }: Props): JSX.
                 setLightBoxOpen(true);
               }}
             />
-          </GridListTile>
+          </ImageListItem>
         ))}
         {user && (
-          <GridListTile cols={1}>
+          <ImageListItem cols={1}>
             <Grid className={classes.lastTile}>
               <Button onClick={clickInput}>
                 <AddIcon /> new images
               </Button>
             </Grid>
-          </GridListTile>
+          </ImageListItem>
         )}
-      </GridList>
+      </ImageList>
 
       {lightBoxOpen && (
         <Lightbox

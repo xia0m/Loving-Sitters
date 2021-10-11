@@ -1,6 +1,6 @@
-import CssBaseline from '@material-ui/core/CssBaseline';
+import CssBaseline from '@mui/material/CssBaseline';
 import useStyles from './useStyles';
-import { Paper } from '@material-ui/core';
+import { Paper } from '@mui/material';
 // import { MuiPickersUtilsProvider, Calendar } from '@material-ui/pickers';
 // import DateFnsUtils from '@date-io/date-fns';
 // import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date';

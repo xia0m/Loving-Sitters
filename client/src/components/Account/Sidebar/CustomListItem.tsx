@@ -1,4 +1,4 @@
-import { ListItem, ListItemText, Typography } from '@material-ui/core';
+import { ListItem, ListItemText, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import { useStyles } from './useStyles';

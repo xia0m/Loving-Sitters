@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import moment from 'moment';
 import { Message } from '../../../../interface/Messages';
 import SenderBubble from '../Bubbles/SenderBubble';

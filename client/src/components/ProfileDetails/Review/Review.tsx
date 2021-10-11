@@ -1,7 +1,7 @@
-import Rating from '@material-ui/lab/Rating';
+import Rating from '@mui/material/Rating';
 import moment from 'moment';
 
-import { Avatar, Box, Divider, Fade, Typography } from '@material-ui/core';
+import { Avatar, Box, Divider, Fade, Typography } from '@mui/material';
 import { Review } from '../../../interface/Review';
 
 import useStyles from './useStyles';

@@ -1,5 +1,5 @@
-import { Box, Button, Grid, Typography, TextField } from '@material-ui/core';
-import Grow from '@material-ui/core/Grow';
+import { Box, Button, Grid, Typography, TextField } from '@mui/material';
+import Grow from '@mui/material/Grow';
 
 import useStyles from './useStyles';
 import CustomTextField from './CustomTextField';

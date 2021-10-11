@@ -1,6 +1,6 @@
-import Grid from '@material-ui/core/Grid';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Grid from '@mui/material/Grid';
+import CssBaseline from '@mui/material/CssBaseline';
+import CircularProgress from '@mui/material/CircularProgress';
 import useStyles from './useStyles';
 import { useAuth } from '../../context/useAuthContext';
 import { useHistory, useParams } from 'react-router-dom';
@@ -53,7 +53,7 @@ export default function Messages(): JSX.Element {
   }
 
   return (
-    <Grid container component="main" justify="center" className={`${classes.root} ${classes.dashboard}`}>
+    <Grid container component="main" justifyContent="center" className={`${classes.root} ${classes.dashboard}`}>
       <CssBaseline />
       <Grid item className={classes.drawerWrapper} xs={12} sm={10} md={4} xl={2}>
         {loggedInUserDetails && <SideBar userProfile={loggedInUserDetails} conversations={conversations} />}

@@ -1,4 +1,4 @@
-import { Avatar, Grid, Typography, List, ListItem } from '@material-ui/core';
+import { Avatar, Grid, Typography, List, ListItem } from '@mui/material';
 import useStyles from './useStyles';
 import { Notification } from '../../interface/Notification';
 import moment from 'moment';
@@ -6,8 +6,8 @@ import { markSingleNotification } from '../../helpers/APICalls/notifications';
 import { useAuth } from '../../context/useAuthContext';
 import { useHistory } from 'react-router-dom';
 
-import { Chat, Settings, EventAvailable, Payment } from '@material-ui/icons';
-import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
+import { Chat, Settings, EventAvailable, Payment } from '@mui/icons-material';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 
 interface NotificationTypesIcons {
   [key: string]: JSX.Element;
@@ -44,7 +44,7 @@ export default function NotificationItem(): JSX.Element {
               <Avatar className={classes.notiAvatar}>{icons[notification.types]}</Avatar>
             </Grid>
             <Grid item xs={9}>
-              <Grid container direction="column" justify="space-around" alignItems="flex-start" spacing={1}>
+              <Grid container direction="column" justifyContent="space-around" alignItems="flex-start" spacing={1}>
                 <Grid item>
                   <Typography>{notification.description}</Typography>
                 </Grid>

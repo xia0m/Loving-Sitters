@@ -1,14 +1,6 @@
 import { useState } from 'react';
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  TableCell,
-} from '@material-ui/core';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TableCell } from '@mui/material';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Request } from '../../interface/Bookings';
 import useStyles from './useStyles';
 import moment from 'moment';

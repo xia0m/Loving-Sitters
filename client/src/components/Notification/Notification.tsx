@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, ClickAwayListener } from '@material-ui/core';
+import { Button, ClickAwayListener } from '@mui/material';
 import useStyles from './useStyles';
 import useNavBarStyles from '../Navbar/useStyles';
 import NotificationDropdown from './NotificationDropdown';

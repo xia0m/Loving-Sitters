@@ -1,9 +1,9 @@
-import Grid from '@material-ui/core/Grid';
+import Grid from '@mui/material/Grid';
 import useStyles from './useStyles';
-import { Typography, List, ListItem, Divider, Button, Avatar } from '@material-ui/core';
+import { Typography, List, ListItem, Divider, Button, Avatar } from '@mui/material';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardDatePicker, TimePicker } from '@material-ui/pickers';
-import Rating from '@material-ui/lab/Rating';
+import Rating from '@mui/material/Rating';
 import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date';
 
 interface Props {
@@ -40,7 +40,7 @@ export default function OrderDetails({
       <Grid container direction="row" className={classes.order}>
         <Grid className={classes.orderDetailsContainer}>
           <Typography variant="h4">Your Order Details</Typography>
-          <Grid container justify="space-between" className={classes.orderDetails}>
+          <Grid container justifyContent="space-between" className={classes.orderDetails}>
             <Grid>
               <Grid container>
                 <Avatar alt="sitter" src={userProfile.profilePhoto} className={classes.avatar} />

@@ -1,10 +1,10 @@
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import useStyles from './useStyles';
 import AvatarDisplay from '../../../components/AvatarDisplay/AvatarDisplay';
 import { Profile } from '../../../interface/Profile';
 import { Conversation } from '../../../interface/Messages';
-import { Box } from '@material-ui/core';
+import { Box } from '@mui/material';
 import { useMessages } from '../../../context/useMessageContext';
 
 interface Props {
@@ -22,7 +22,7 @@ const SideBar = ({ conversation }: Props): JSX.Element => {
     <Grid
       container
       alignItems="center"
-      justify="space-between"
+      justifyContent="space-between"
       className={`${classes.chat} ${activeConversation === conversationId ? classes.active : ''}`}
       wrap="nowrap"
       onClick={() => setActiveConversation(conversationId)}

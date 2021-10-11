@@ -1,7 +1,7 @@
-import { Box, Grid, Typography, useTheme, Button } from '@material-ui/core';
+import { Box, Grid, Typography, useTheme, Button } from '@mui/material';
 import useStyles from './useStyles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useMessages } from '../../../../context/useMessageContext';
 
 interface Props {
@@ -15,7 +15,7 @@ const Header = ({ userName, online }: Props): JSX.Element => {
   const { setActiveConversation } = useMessages();
   return (
     <Grid container alignItems="center" className={classes.root}>
-      {useMediaQuery(theme.breakpoints.down('sm')) && (
+      {useMediaQuery(theme.breakpoints.down('md')) && (
         <Button variant="text" onClick={() => setActiveConversation('')}>
           <ArrowBackIcon />
           go back

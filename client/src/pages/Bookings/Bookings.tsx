@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import Grid from '@material-ui/core/Grid';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@mui/material/Grid';
+import CssBaseline from '@mui/material/CssBaseline';
 import useStyles from './useStyles';
 import Booking from './Booking/Booking';
-import { CircularProgress, Paper, Typography } from '@material-ui/core';
+import { CircularProgress, Paper, Typography } from '@mui/material';
 import { Request } from '../../interface/Bookings';
 import BookingCalendar from './Calendar/Calendar';
 import { getBookings } from '../../helpers/APICalls/bookings';
@@ -61,7 +61,7 @@ export default function Bookings(): JSX.Element {
   return (
     <>
       <CssBaseline />
-      <Grid container component="main" justify="space-around" className={`${classes.root}`}>
+      <Grid container component="main" justifyContent="space-around" className={`${classes.root}`}>
         <Grid item md={4} sm={5} xs={8} className={classes.bookings}>
           {bookings.length === 0 ? (
             <Paper elevation={6} className={classes.paper}>

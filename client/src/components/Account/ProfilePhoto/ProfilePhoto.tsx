@@ -1,4 +1,4 @@
-import { Box, Typography, Avatar, Grid, Menu, MenuItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { Box, Typography, Avatar, Grid, Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material';
 
 import React, { useRef, useState, useEffect } from 'react';
 import { uploadPhoto, deletePhotos } from '../../../helpers/APICalls/updatePhotos';
@@ -9,8 +9,8 @@ import { useSnackBar } from '../../../context/useSnackbarContext';
 
 import useStyles from './useStyles';
 
-import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 export default function UploadPhoto(): JSX.Element {
   const classes = useStyles();

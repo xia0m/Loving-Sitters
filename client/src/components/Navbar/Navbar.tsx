@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
 import useStyles from './useStyles';
-import { Button, IconButton, Grid, Menu, MenuItem, Modal, Typography } from '@material-ui/core';
+import { Button, IconButton, Grid, Menu, MenuItem, Modal, Typography } from '@mui/material';
 import Logo from '../../Images/logo.png';
 import { User } from '../../interface/User';
 import { Profile } from '../../interface/Profile';
@@ -126,7 +126,7 @@ export default function Navbar({ user, userProfile, logout }: Props): JSX.Elemen
                 type="number"
                 key="priceInput"
               />
-              <Grid container justify="center" className={classes.modalBtn}>
+              <Grid container justifyContent="center" className={classes.modalBtn}>
                 <Button variant="contained" color="primary" onClick={handleSaveProfile}>
                   Save
                 </Button>
@@ -220,6 +220,7 @@ export default function Navbar({ user, userProfile, logout }: Props): JSX.Elemen
                 aria-controls="user-menu"
                 aria-haspopup="true"
                 id="product_tour_profile_button"
+                size="large"
               >
                 {user !== null && user !== undefined && <AvatarDisplay loggedIn={true} profile={profile} />}
               </IconButton>

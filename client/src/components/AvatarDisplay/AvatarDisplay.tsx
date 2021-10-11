@@ -1,5 +1,5 @@
-import { Badge } from '@material-ui/core';
-import Avatar from '@material-ui/core/Avatar';
+import { Badge } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
 import { Profile } from '../../interface/Profile';
 import useStyles from './useStyles';
 

@@ -1,4 +1,4 @@
-import { Container } from '@material-ui/core';
+import { Container } from '@mui/material';
 import { useAuth } from '../../context/useAuthContext';
 import Navbar from '../Navbar/Navbar';
 import ReactourFAB from '../ReactourFAB/ReactourFAB';
