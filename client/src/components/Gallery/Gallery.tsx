@@ -162,7 +162,7 @@ export default function Gallery({ gallery, user = false, profile }: Props): JSX.
           onChange={(e: React.ChangeEvent<HTMLInputElement>): void => handleImageChange(e)}
         />
       )}
-      <ImageList cellHeight={160} cols={3} spacing={10}>
+      <ImageList rowHeight={160} cols={3} gap={10}>
         {gallery.map((image, i) => (
           <ImageListItem cols={1} key={image}>
             {user && (

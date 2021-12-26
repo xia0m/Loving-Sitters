@@ -44,7 +44,6 @@ const AuthMenu = (): JSX.Element => {
           vertical: 'bottom',
           horizontal: 'left',
         }}
-        getContentAnchorEl={null}
       >
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>

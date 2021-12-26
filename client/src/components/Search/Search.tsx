@@ -74,23 +74,7 @@ const Search = ({ search, handleChange }: Props): JSX.Element => {
         freeSolo
         renderInput={(params) => (
           <div className={classes.search}>
-            <InputBase
-              {...params.inputProps}
-              placeholder="Search"
-              classes={{
-                root: classes.searchRoot,
-                input: classes.searchInput,
-              }}
-              inputProps={{
-                'aria-label': 'search',
-                ref: params.InputProps.ref,
-              }}
-              startAdornment={
-                <div className={classes.searchIcon}>
-                  <SearchIcon />
-                </div>
-              }
-            />
+            <InputBase />
           </div>
         )}
       />
