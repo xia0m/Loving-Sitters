@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  server:
+    image: 'api-server'
+    env_file: './server/.env'
+    networks:
+      - loving-sitter
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    ports:
+      - '3001:3001'
+  client:
+    image: 'react-app-dev'
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    ports:
+      - '3000:3000'
+    networks:
+      - loving-sitter
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+networks:
+  loving-sitter:
+    driver: bridge
