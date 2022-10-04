@@ -40,7 +40,7 @@ exports.uploadPhotos = asyncHandler((req, res, next) => {
         }
       } catch (err) {
         res.status(400);
-        throw new Error('Error occured during uploading');
+        console.error('Error occured during uploading', err);
       }
     });
   }
